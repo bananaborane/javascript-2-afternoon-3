@@ -28,6 +28,9 @@
 */
 
 // Code Here 
+let first = function(array, callback){
+  callback(array[0]);
+}
 
 // Do not edit the code below.
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
@@ -48,6 +51,8 @@ first(names, function(firstName){
 */
 
 //Code Here
+let last = (array, callback)=>  {
+  return callback(array[array.length-1])}
 
 // Do not edit the code below.
 last(names, function(lastName){
@@ -66,6 +71,9 @@ last(names, function(lastName){
 */
 
 //Code Here
+let multiply = (num1, num2, cb)=>{
+  return cb(num1*num2);
+}
 
 // Do not edit the code below.
 multiply(4, 3, function(answer){
@@ -85,6 +93,16 @@ multiply(4, 3, function(answer){
 */
 
 //Code Here 
+let flag = false;
+let contains = (array, name, callback)=>{
+  for(let i = 0 ;i<array.length;i++){
+    if (array[i]===name){
+      callback(true)
+    } else {
+      callback(false)
+    }
+  }
+}
 
 // Do not edit the code below.
 contains(names, 'Colt', function(result){
@@ -106,6 +124,20 @@ contains(names, 'Colt', function(result){
 */
 
 //Code Here
+let uniq = function(arr, cb){
+  
+  let modArr = [];
+  for(let i = 0;i<arr.length;i++){
+    if (modArr.indexOf(arr[i])===-1){
+      modArr.push(arr[i]);
+    }
+  } 
+  return cb(modArr)
+
+}
+
+
+
 
 // Do not edit the code below.
 uniq(names, function(uniqArr){
@@ -123,6 +155,11 @@ uniq(names, function(uniqArr){
 */
 
 //Code Here 
+function each(array, callback){
+  array.forEach(function(name,index){
+    callback(name, index)
+  })
+}
 
 // Do not edit the code below.
 each(names, function(item, indice){
@@ -140,6 +177,13 @@ each(names, function(item, indice){
 */
 
 // Code here
+let getUserById = (array, id, callback)=>{
+  array.forEach(function(element){
+    if (element.id === id){
+      callback(element)
+    }
+  })
+}
 
 // Do not edit the code below.
 var users = [
